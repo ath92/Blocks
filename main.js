@@ -15,7 +15,7 @@ function draw() {
         rect(x1, y1, x2, y2);
     });
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 20; i++) {
         // stroke(Math.random() * 255, Math.random() * 255, Math.random() * 255)
         let max = 0;
         let index;
@@ -31,7 +31,7 @@ function draw() {
         const newRects = splitRect(largest, 0.5, 0.5);
         adjacentRectangles[index] = newRects[3 - index];
         newRects.forEach(([ x1, y1, x2, y2 ]) => {
-            rect(x1, y1, x2, y2);
+            rect(x1, y1, x2 - x1, y2 - y1);
         });
     }
 }
